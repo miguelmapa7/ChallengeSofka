@@ -1,7 +1,7 @@
 const express = require('express');
 const QuestionController = require('../controller/controllerQuestion');
 
-class EstudianteRouter{
+class QuestionRouter{
 
     constructor(){
         this.router = express.Router();
@@ -11,11 +11,11 @@ class EstudianteRouter{
     config(){
         const objQuestionC = new QuestionController();
         this.router.post("/question", objQuestionC.registrar);
-        this.router.get("/question", objQuestionC.getEstudiantes);
-        this.router.put("/question", objQuestionC.setEstudiante);
+        this.router.get("/question", objQuestionC.getQuestion);
+        this.router.put("/question", objQuestionC.setQuestion);
         this.router.delete("/question", objQuestionC.delete);
     }
 
 }
 
-module.exports = EstudianteRouter;
+module.exports = QuestionRouter;

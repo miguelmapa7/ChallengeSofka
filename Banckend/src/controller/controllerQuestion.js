@@ -16,7 +16,7 @@ class EstudianteController {
         });
     }
 
-    getEstudiantes(req, res) {
+    getQuestion(req, res) {
         question.find((error, data) => {
             if (error) {
                 res.status(500).json({ error });
@@ -27,7 +27,7 @@ class EstudianteController {
     }
    
 
-    setEstudiante(req, res) {
+    setQuestion(req, res) {
         // Capturar los datos del cuerpo de la peticion
         let { id_question,
             description,
@@ -48,7 +48,7 @@ class EstudianteController {
             answear4,
             correct
         }
-        // Actualizar un estudiante por id
+        // Actualizar un 
         question.findByIdAndUpdate(id, { $set: objQuestion }, (error, data) => {
             if (error) {
                 res.status(500).json({ error });
